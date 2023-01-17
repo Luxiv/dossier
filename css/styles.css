@@ -1,0 +1,451 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0
+}
+
+ul[class] {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+  background-color: #1a1a1aff;
+  line-height: 1.8;
+  color: #0ff;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  /* min-height: 100vh; */
+  height: 100vh;
+}
+
+.top {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #fff; 
+}
+
+.big-tabs_item {
+  overflow-y: scroll;
+}
+
+.patient-name {
+  font-size: 2rem;
+  display: block;
+  color: #0f0;
+}
+
+.patient-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.big-tabs_top {
+  margin-left: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+}
+
+
+
+.big-tabs_top-item {
+  color: #fff;
+}
+
+.big-tabs_top-item--active {
+  color: #0f0;
+}
+
+.big-tabs_top-item--active a svg path {
+  fill: #0f0 !important;
+}
+
+.big-tabs_top-icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.input-title {
+  display: block;
+}
+
+.patient-info-item {
+  border-bottom: 1px solid #fff;
+}
+
+
+.res {
+  font-size: 1.4rem;
+  margin-left: 20px;
+  color: #0f0;
+}
+
+.lang-item--active {
+  color: #fff;
+}
+
+.lang-item {
+  cursor: pointer;
+}
+
+.img-inline,
+.inline {
+  display: inline-block;
+}
+
+.img-inline {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+
+.stat-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 0 1;
+}
+
+.stat_item {
+  text-align: center;
+}
+
+.stat_item-res {
+  font-size: 1.6rem;
+  color: #0f0;
+}
+
+.age-res span {
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
+.price-subtext {
+  font-size: 1rem;
+}
+
+.job-content {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+
+
+.job-ico svg g path {
+  stroke: #fff !important;
+}
+
+.job-ico--active svg g path {
+  stroke: #0f0 !important;
+  /* fill: #0f0 !important; */
+}
+
+.footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer svg path {
+  fill: #fff !important;
+}
+
+.footer-active svg path {
+  fill: #0f0 !important;
+}
+
+.footer_item img{
+  width: 85px;
+  height: 60px;
+}
+
+.patients-top {
+  margin: 0 auto 3em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+
+.patients-input_img {
+  width: 1.4em;
+  height: 1.4em;
+  display: inline-block;
+  transform: translateY(4px);
+}
+
+.patients-input {
+  margin-bottom: 20px;
+}
+
+.patiens-list-all {
+  overflow-y: scroll;
+  max-height: 60vh;
+}
+
+.patiens-list-all-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #0f0;
+  padding-left: 10px;
+}
+
+.patiens-list-all-name {
+  font-size: 1.6rem;
+  color: #0f0;
+}
+
+.patiens-list-all-phone {
+  padding-left: 10px;
+}
+
+.patiens-list-all-item-btns {
+  display: none;
+}
+
+
+.patiens-list-all-item-btns--visible .patiens-list-all-item-btns {
+  display: flex;
+  justify-content: end;
+  align-items: baseline;
+  gap: 22px;
+  padding-right: 10px;
+}
+
+.patiens-list-all-item-btn {
+  width: 18px;
+  height: 18px;
+}
+
+.patiens-list-all-item-btn:hover {
+  scale: 1.2;
+}
+
+
+.plan-visit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 116px;
+}
+
+.plan-visit-link {
+  font-size: 1.8rem;
+  color: #0f0;
+}
+
+
+.this-visit {
+  text-align: center;
+}
+
+.this-visit_table-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.this-visit-btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+.this-visit-payment {
+  width: 160px;
+}
+
+.this-visit-payment-anamnez {
+  margin: 30px 0;
+  width: 80%;
+  height: 2rem;
+  line-height: 1rem;
+  resize: none;
+  padding: 5px;
+  background-color: #1a1a1a;
+  color:#0f0;
+  font-size: 1rem;
+}
+
+.patient-log_item {
+  border-top: 1px solid #fff;
+  padding: 20px 10px;
+}
+.patient-log_item-top {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.patient-log_date {
+  margin-right: 60px;
+}
+
+.patient-log_payment {
+  margin-right: 50px;
+}
+
+.patient-log_describe {
+  font-size: 1.8rem;
+  color: #0f0;
+}
+
+.patient-log_payment-zero {
+  color: #f00;
+}
+
+.form-add_radio-lang p {
+  color:#0f0;
+  font-size: 1.4rem;
+}
+
+.form-add_radio-lang {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.form-add_radio-lang label {
+  position: relative;
+}
+
+.form-add_radio-lang label input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
+.form-add_radio-lang-item {
+  margin: 0 20px;
+}
+
+
+.form-add_input-line {
+  border-top: 1px solid #fff;
+  padding: 10px 10px;
+}
+.form-add_input-line:last-child {
+  border-bottom: 1px solid #fff;
+}
+
+.form-add_input-line input {
+  background-color: inherit;
+  color:#0ff;
+  padding: 10px 10px;
+  width: 100%;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-add_input-line input:focus-visible {
+  outline: none;
+}
+
+.form-add_h-w-head,
+.form-add_h-w-data {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-add_h-w-data input {
+  width: 100px;
+  text-align: center;
+}
+
+
+.form-add_radio-p-a-item  input:checked + img {
+  background-color: #0f0 !important;
+  /* background: red; */
+
+}
+
+.form-add_radio-p-a-item input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  x: 0;
+  y: 0;
+  visibility: hidden;
+}
+
+
+.form-add_radio-p-a {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}

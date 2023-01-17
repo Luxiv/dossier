@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="57.329391"
+   height="41.474915"
+   viewBox="0 0 7.716949 5.5828222"
+   version="1.1"
+   id="svg2484"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)"
+   sodipodi:docname="redefinition.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2486"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="3.3638608"
+     inkscape:cx="28.687275"
+     inkscape:cy="20.809422"
+     inkscape:window-width="1364"
+     inkscape:window-height="751"
+     inkscape:window-x="0"
+     inkscape:window-y="15"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2481" />
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-24.469864,53.127294)">
+    <path
+       style="fill:#0000ff;stroke-width:0.0214633"
+       d="m 29.911152,-47.769787 -0.224711,-0.225484 0.192751,-0.198209 c 0.106014,-0.109021 0.381096,-0.389384 0.611291,-0.623028 0.230195,-0.233644 0.421673,-0.43398 0.425509,-0.445188 0.0046,-0.01277 -0.906366,-0.02259 -2.436081,-0.02625 l -2.443056,-0.0059 -0.189036,-0.05929 c -0.678024,-0.212643 -1.160905,-0.722351 -1.336689,-1.410946 -0.05865,-0.229722 -0.0541,-0.674051 0.0093,-0.912187 0.142928,-0.536586 0.52231,-1.00045 1.017671,-1.244295 0.394969,-0.194424 0.365528,-0.191189 1.813354,-0.19943 l 1.271696,-0.0073 v 0.323047 0.323047 h -1.176539 c -0.758035,0 -1.221839,0.0083 -1.30389,0.02345 -0.250794,0.04614 -0.503476,0.191133 -0.717508,0.411723 -0.109977,0.11335 -0.268031,0.433512 -0.302163,0.612084 -0.100463,0.525586 0.168351,1.088667 0.645484,1.352079 0.280744,0.154991 0.06824,0.142898 2.720473,0.154818 1.313287,0.0059 2.38779,0.0051 2.38779,-0.0025 -5e-6,-0.0072 -0.275428,-0.296734 -0.612064,-0.643418 l -0.612058,-0.630338 0.225702,-0.225703 0.225708,-0.225702 0.541963,0.537231 c 0.298078,0.295483 0.766694,0.759022 1.041364,1.0301 l 0.4994,0.492858 -1.025485,1.025023 -1.025481,1.025023 z"
+       id="path7390" />
+  </g>
+</svg>
