@@ -6,309 +6,80 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 
 <body>
   <div class="wrapper">
-    <div class="patients-top">
-      <div class="patients-top-item">
-        <img src="img/search.svg" alt="">
+    <div class="top">
+      <div class="patient-top">
+        <div class="patient-top-left">
+          <span class="patient-name">{{ patient.name_surname }}</span>
+          <a class="user-tel" href="tel:+38{{ patient.phone_number }}">{{ patient.phone_number }}</a>
+        </div>
+        <div class="patient-top-img">
+          <a href="#">
+            <img src="../static/img/related.svg" alt="">
+          </a>
+        </div>
       </div>
-      <div class="patients-top-item">
-        <img src="img/entry.svg" alt="">
+      <div class="big-tabs_top">
+        <a class="big-tabs_top-item" href="/dossier/?info=general&patient_id={{ patient.id }}">
+          Общее
+        </a>
+        <a class="big-tabs_top-item big-tabs_top-item--active" href="/dossier/?info=anamnesis&patient_id={{ patient.id }}">
+          Анамнез
+        </a>
+        <div class="big-tabs_top-icons">
+          <div class="big-tabs_top-icon">
+            <a href="calender.html">
+              <img src="../static/img/timetable.svg" alt="">
+            </a>
+          </div>
+          <div class="big-tabs_top-icon">
+            <a href="#">
+              <img src="../static/img/img_plus.svg" alt="">
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
+    <div class="big-tabs_item  big-tabs_item--active">
+      <div class="patient-info">
 
-    <div class="big-tabs_item">
-      <img class="patients-input_img" src="img/search.svg" alt="">
-      <input class="patients-input" type="text" placeholder="Введите имя">
+        <div class="patient-info-item anamnez-item">
+          <p class="anamnez-title">Особенности проведения процедуры</p>
+          <p class="anamnez-discribe res">{{ anamnesis.procedure_features }}</p>
+        </div>
 
-      <div class="patiens-list-all">
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
+        <div class="patient-info-item anamnez-item">
+          <p class="anamnez-title">Диагноз</p>
+          <p class="anamnez-discribe res">{{ anamnesis.diagnosis }}</p>
         </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
+
+        <div class="patient-info-item anamnez-item">
+          <p class="anamnez-title">Сопутствующие заболевания</p>
+          <p class="anamnez-discribe res">{{ anamnesis.comorbidities }}</p>
         </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
+
+        <div class="patient-info-item anamnez-item">
+          <p class="anamnez-title">Жалобы</p>
+          <p class="anamnez-discribe res">{{ anamnesis.pre_complaints }}</p>
         </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
+
+        {% for complaint in complaints %}
+            <div class="patient-info-item anamnez-item">
+              <p class="anamnez-title">Жалобы {{ complaint.post_complaint_date }}</p>
+              <p class="anamnez-discribe res">{{ complaint.post_complaints }}</p>
             </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
-        </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
-        </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
-        </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
-        </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
-        </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
-        </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
-        </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
-        </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
-        </div>
-        <div class="patiens-list-all-item">
-          <div class="patiens-list-all-item-name-phone">
-            <div class="patiens-list-all-name">
-              Потоцкий Александр
-            </div>
-            <div class="patiens-list-all-phone">
-              066-64-88-763
-            </div>
-          </div>
-          <div class="patiens-list-all-item-btns">
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/related.svg" alt="related">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/copy.svg" alt="copy">
-            </a>
-            <a class="patiens-list-all-item-btn" href="#">
-              <img src="img/edit.svg" alt="edit">
-            </a>
-          </div>
-        </div>
+        {% endfor %}
       </div>
-
-
-
-
     </div>
 
 
     <footer class="footer">
-      <a href="patientslist.html" class="footer_item footer-active">
+      <a href="/dossier/" class="footer_item">
         <svg width="51.283623" height="51.315411" viewBox="0 0 6.9031448 6.9074239" version="1.1" id="svg2484"
           inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)" sodipodi:docname="search.svg"
           xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -349,7 +120,7 @@
         </svg>
 
       </a>
-      <a href="index.html" class="footer_item">
+      <a href="index.html" class="footer_item footer-active">
         <svg width="48.263416" height="51.117889" viewBox="0 0 6.4966033 6.8808361" version="1.1" id="svg2484"
           inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)" sodipodi:docname="person.svg"
           xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -418,6 +189,6 @@
 </body>
 
 
-<script src="js/script.js"></script>
+<script src="../static/js/script.js"></script>
 
 </html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ patient.name_surname }}</title>
+</head>
+<body>
+    <p>dsfsdfdsf</p>
+    <p>{{ patient.name_surname }}</p>
+{#    <p>dsfsdfdsf {{ patient.name_surname }} gggggg</p>#}
+    {% for std in patient %}
+        {{ std.name_surname }}
+    {% endfor %}
+</body>
+</html>
