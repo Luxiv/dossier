@@ -6,37 +6,37 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 
 <body>
   <div class="wrapper">
     <div class="patients-top">
       <div class="patients-top-item">
-        <img src="img/save.svg" alt="">
+        <button type="submit" form="add pat"><img  src="../static/img/save.svg" alt="" ></button>
       </div>
       <div class="patients-top-item">
-        <img src="img/related.svg" alt="">
+        <img src="../static/img/related.svg" alt="">
       </div>
       <div class="patients-top-item">
-        <img src="img/calendartime.svg" alt="">
+        <img src="../static/img/calendartime.svg" alt="">
       </div>
     </div>
 
 
     <div class="big-tabs_item">
-      <div class="form-add">
+      <form action="" method="post"  class="form-add" id="add pat">
         <div class="form-add_input-line">
-          <input type="text" placeholder="Имя">
+          <input type="text" placeholder="Имя" name="first name">
         </div>
         <div class="form-add_input-line">
-          <input type="text" placeholder="Фамилия">
+          <input type="text" placeholder="Фамилия" name="last name">
         </div>
         <div class="form-add_input-line">
-          <input type="text" placeholder="Отчество">
+          <input type="text" placeholder="Отчество" name="father name">
         </div>
         <div class="form-add_input-line">
-          <input type="text" placeholder="Номер телефона">
+          <input type="text" placeholder="Номер телефона" name="phone">
         </div>
         <div class="form-add_radio-lang">
           <p>зык об</p>
@@ -65,7 +65,7 @@
               </div>
             </div>
             <div class="form-add_birthday-data">
-              <input type="date" class="form-add_birthday-data-item">
+              <input type="date" class="form-add_birthday-data-item" name="birth date">
 
               <div class="form-add_birthday-data-item">
 
@@ -83,15 +83,15 @@
             </div>
           </div>
           <div class="form-add_h-w-data">
-            <input class="form-add_h-w-data-item" type="number" placeholder="000">
+            <input class="form-add_h-w-data-item" type="number" placeholder="000" name="weight">
 
-            <input class="form-add_h-w-data-item" type="number" placeholder="00">
+            <input class="form-add_h-w-data-item" type="number" placeholder="00" name="height">
 
-            </input>
+
           </div>
         </div>
         <div class="form-add_input-line">
-          <input type="text" placeholder="Адрес">
+          <input type="text" placeholder="Адрес" name="address">
         </div>
 
         <div class="form-add_radio-p-a">
@@ -99,54 +99,54 @@
 
           <label class="form-add_radio-p-a-item" for="radio-p-a-chair"><input type="radio" name="radio-p-a"
               id="radio-p-a-chair">
-            <img src="img/chair.svg" alt="chair">
+            <img src="../static/img/chair.svg" alt="chair">
           </label>
 
           <label class="form-add_radio-p-a-item" for="radio-p-a-walk"><input type="radio" name="radio-p-a"
               id="radio-p-a-walk">
-            <img src="img/walking.svg" alt="walking">
+            <img src="../static/img/walking.svg" alt="walking">
           </label>
 
           <label class="form-add_radio-p-a-item" for="radio-p-a-barbell"><input type="radio" name="radio-p-a"
               id="radio-p-a-barbell">
-            <img src="img/barbell.svg" alt="barbell">
+            <img src="../static/img/barbell.svg" alt="barbell">
           </label>
 
         </div>
         <div class="form-add_input-line">
-          <input type="text" placeholder="Кем работает">
+          <input type="text" placeholder="Кем работает" name="job">
         </div>
         <div class="form-add_input-line">
-          <input type="text" placeholder="Интересы">
+          <input type="text" placeholder="Интересы" name="interests">
         </div>
 
         <div class="form-add_input-line">
-          <input type="text" placeholder="Диагноз">
+          <input type="text" placeholder="Диагноз" name="diagnosis">
         </div>
         <div class="form-add_input-line">
-          <input type="text" placeholder="Сопутствующие заболевания">
+          <input type="text" placeholder="Сопутствующие заболевания" name="comorbidities">
         </div>
 
         <div class="form-add_input-line">
-          <input type="text" placeholder="Жалобы">
+          <input type="text" placeholder="Жалобы" name="pre_complaints">
         </div>
 
         <div class="form-add_input-line">
-          <input type="text" placeholder="Особенности проведения процедуры">
+          <input type="text" placeholder="Особенности проведения процедуры" name="procedure_features">
         </div>
         <div class="form-add_input-line">
-          <input type="text" placeholder="Цена">
+          <input type="text" placeholder="Цена" name="price">
         </div>
         <div class="form-add_input-line">
-          <input type="text" placeholder="Время">
+          <input type="text" placeholder="Время" name="visit time">
         </div>
 
-      </div>
+      </form>
     </div>
 
 
     <footer class="footer">
-      <a href="patientslist.html" class="footer_item">
+      <a href="/dossier/" class="footer_item">
         <svg width="51.283623" height="51.315411" viewBox="0 0 6.9031448 6.9074239" version="1.1" id="svg2484"
           inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)" sodipodi:docname="search.svg"
           xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -166,7 +166,7 @@
           </g>
         </svg>
       </a>
-      <a href="add_edit.html" class="footer_item footer-active">
+      <a href="/add_patient/" class="footer_item footer-active">
         <svg width="48.270069" height="51.291954" viewBox="0 0 6.4974988 6.9042665" version="1.1" id="svg2484"
           inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)" sodipodi:docname="entry.svg"
           xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -187,7 +187,7 @@
         </svg>
 
       </a>
-      <a href="index.html" class="footer_item ">
+      <a href="/dossier/" class="footer_item ">
         <svg width="48.263416" height="51.117889" viewBox="0 0 6.4966033 6.8808361" version="1.1" id="svg2484"
           inkscape:version="1.2.1 (9c6d41e410, 2022-07-14, custom)" sodipodi:docname="person.svg"
           xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -256,6 +256,6 @@
 </body>
 
 
-<script src="js/script.js"></script>
+<script src="../static/js/script.js"></script>
 
 </html>

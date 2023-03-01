@@ -30,9 +30,9 @@ class PatientDossier(db.Model):  # творюємо обєкт PatientDossier з
     cancellations      = db.Column(db.Integer())
     desired_frequency  = db.Column(db.Integer())
 
-    def __init__(self, name, phone_number):  #  це теж внутрішнє тобі не треба. Коли в коді викликається обєкт PatientDossier без визначення конкретних полів то повертається ім"я і телефон пацієнта по якому був запит
-        self.name = name
-        self.phone_number = phone_number
+    # def __init__(self, name, phone_number):  #  це теж внутрішнє тобі не треба. Коли в коді викликається обєкт PatientDossier без визначення конкретних полів то повертається ім"я і телефон пацієнта по якому був запит
+    #     self.name = name
+    #     self.phone_number = phone_number
 
 
 class PatientAnamnesis(db.Model):  # класс анамнез де описуються данні анамнезу
