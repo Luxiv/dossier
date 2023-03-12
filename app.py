@@ -1,4 +1,6 @@
-from flask import render_template, request
+from flask import render_template, request, abort
+from datetime import datetime
+
 from models import *
 
 
@@ -41,33 +43,42 @@ def patient_dossier():
 def add_patient():
     if request.method == 'POST':
         try:
-            pat = PatientDossier(name_surname=request.form['first name'],
-                                 price=request.form['price'],
-                                 birth_day=request.form['birth date'],
-                                 weight=request.form['weight'],
-                                 height=request.form['height'],
-                                 phone_number=request.form['phone'],
-                                 address=request.form['address'],
-                                 job=request.form['job'],
-                                 interests=request.form['interests'],
-                                 visits=0,
-                                 course=0,
-                                 non_appearance=0,
-                                 cancellations=0,
-                                 desired_frequency=0)
+            pat = PatientDossier(
+                name_surname=request.form['name'],
+                price=request.form['price'],
+                birth_day=datetime.strptime(request.form['birth date'], "%Y-%m-%d"),
+                weight=request.form['weight'],
+                height=request.form['height'],
+                phone_number=request.form['phone'],
+                address=request.form['address'],
+                job=request.form['job'],
+                interests=request.form['interests'],
+                visits=0,
+                course=0,
+                non_appearance=0,
+                cancellations=0,
+                desired_frequency=0
+            )
             db.session.add(pat)
             db.session.flush()
-            anamnesis = PatientAnamnesis(id=pat.id,
-                                         procedure_features=request.form['procedure_features'],
-                                         diagnosis=request.form['diagnosis'],
-                                         comorbidities=request.form['comorbidities'],
-                                         pre_complaints=request.form['pre_complaints']
-                                         )
+
+            anamnesis = PatientAnamnesis(
+                id=pat.id,
+                procedure_features=request.form['procedure_features'],
+                diagnosis=request.form['diagnosis'],
+                comorbidities=request.form['comorbidities'],
+                pre_complaints=request.form['pre_complaints']
+            )
             db.session.add(anamnesis)
             db.session.commit()
-        except Exception:
-            db.session.rellback()
-            raise Exception('Patient registration error')
+        except KeyError as e:
+            db.session.rollback()
+            error_msg = f"KeyError: {str(e)}"
+            return abort(400, description=f"Bad Request, \n {error_msg}")
+        except Exception as e:
+            db.session.rollback()
+            error_msg = f"Error: {str(e)}"
+            raise Exception(f'Patient registration error \n {error_msg}')
     return render_template('add_edit.html')
 
 
