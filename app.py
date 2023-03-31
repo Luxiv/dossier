@@ -1,4 +1,4 @@
-from flask import render_template, request, abort
+from flask import render_template, request, abort, redirect, url_for
 from datetime import datetime
 
 from models import *
@@ -53,11 +53,15 @@ def add_patient():
                 address=request.form['address'],
                 job=request.form['job'],
                 interests=request.form['interests'],
+                loads_chair=True if request.form.get('radio-p-a-chair') == 'on' else False,
+                loads_walk=True if request.form.get('radio-p-a-walk') == 'on' else False,
+                loads_barbell=True if request.form.get('radio-p-a-barbell') == 'on' else False,
                 visits=0,
                 course=0,
                 non_appearance=0,
                 cancellations=0,
                 desired_frequency=0
+
             )
             db.session.add(pat)
             db.session.flush()
@@ -71,6 +75,8 @@ def add_patient():
             )
             db.session.add(anamnesis)
             db.session.commit()
+            patient_id = pat.id
+            return redirect(url_for('patient_dossier', info='general', patient_id=patient_id))
         except KeyError as e:
             db.session.rollback()
             error_msg = f"KeyError: {str(e)}"
@@ -79,6 +85,8 @@ def add_patient():
             db.session.rollback()
             error_msg = f"Error: {str(e)}"
             raise Exception(f'Patient registration error \n {error_msg}')
+
+
     return render_template('add_edit.html')
 
 

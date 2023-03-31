@@ -6,7 +6,7 @@ from flask import Flask
 #  Нижче ініціалізуємо додаток і оприділяємо конфігурацію БД (зараз ми використовуємо бд sqlite, тут може бути конфіг для постгрес і такого іншого)
 db = SQLAlchemy()
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dossier.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dossier1.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
@@ -29,6 +29,9 @@ class PatientDossier(db.Model):  # творюємо обєкт PatientDossier з
     non_appearance     = db.Column(db.Integer())
     cancellations      = db.Column(db.Integer())
     desired_frequency  = db.Column(db.Integer())
+    loads_chair        = db.Column(db.Boolean())
+    loads_walk         = db.Column(db.Boolean())
+    loads_barbell      = db.Column(db.Boolean())
 
     # def __init__(self, name, phone_number):  #  це теж внутрішнє тобі не треба. Коли в коді викликається обєкт PatientDossier без визначення конкретних полів то повертається ім"я і телефон пацієнта по якому був запит
     #     self.name = name
